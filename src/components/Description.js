@@ -5,8 +5,9 @@ import axios from "axios";
 const Description = props => {
     const { date } = props;
     const [descr, setDescr] = useState("");
+    const url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=" + `${date}`;
     useEffect(() => {
-        axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${date}`)
+        axios.get(url)
             .then(res => {
                 setDescr(res.data.explanation);
             })

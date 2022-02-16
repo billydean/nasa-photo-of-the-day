@@ -3,9 +3,10 @@ import axios from "axios";
 
 const APOD = props => {
     const { date } = props;
-    const [imgURL, setImgURL] = useState(null);
+    const [imgURL, setImgURL] = useState("");
+    const url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=" + `${date}`;
     useEffect(() => {
-        axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${date}`)
+        axios.get(url)
             .then(res => {
                 setImgURL(res.data.url);
             })

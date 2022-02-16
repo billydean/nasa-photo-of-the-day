@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import APOD from "./components/Image";
-import Description from "./components/Description";
-import Meta from "./components/Meta";
+import APOD from "./Image";
+import Description from "./Description";
+import Meta from "./Meta";
 
 const Content = () => {
     const [date, setDate] = useState("");
@@ -22,7 +22,7 @@ return (
             <APOD date={ date }/>
             <Meta date={ date }/>
         </div>
-        <Description />
+        <Description date={ date }/>
         <div className="buttons">
             <button onClick={resetButton}>Today</button>
             <button onClick={randomButton}>Random Day</button>
