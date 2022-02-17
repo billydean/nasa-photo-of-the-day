@@ -3,6 +3,7 @@ import APOD from "./Image";
 import Description from "./Description";
 import Meta from "./Meta";
 import Header from "./Header";
+import styled from 'styled-components';
 
 const Content = () => {
     const [date, setDate] = useState("");
