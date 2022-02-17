@@ -5,6 +5,24 @@ import Meta from "./Meta";
 import Header from "./Header";
 import styled from 'styled-components';
 
+
+const TopContent = styled.div``;
+const Buttons = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    margin-bottom: 2vw;
+    `;
+const Button = styled.button`
+    height: 3vw;
+    width: 12vw;
+    border-radius: 10px;
+    font-size: 1.25em;
+        &:first-child {
+            width: 8vw;
+        }
+`;
+
 const Content = () => {
     const [date, setDate] = useState("");
 
@@ -22,14 +40,14 @@ return (
     <div>
         <Header />
         <div className="top-content">
-            <APOD date={ date }/>
             <Meta date={ date }/>
+            <APOD date={ date }/>
         </div>
         <Description date={ date }/>
-        <div className="buttons">
-            <button onClick={resetButton}>Today</button>
-            <button onClick={randomButton}>Random Day</button>
-        </div>
+        <Buttons>
+            <Button onClick={resetButton}>Today</Button>
+            <Button onClick={randomButton}>Random Day</Button>
+        </Buttons>
     </div>
 )
 }

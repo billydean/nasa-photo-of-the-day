@@ -2,6 +2,22 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import styled from 'styled-components';
 
+const MetaContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2% 0 2% 0;
+    padding: 1% 0 2% 0;
+    background-color: lightseagreen; 
+    `;
+const Title = styled.h1`
+    margin: 1% 0;
+    color: darkslategray;
+    `;
+const Name = styled.p`
+    margin: 0 0 1% 0;
+    color: darkslategray;
+    `;
 
 const Meta = props => {
     const { date } = props;
@@ -17,10 +33,10 @@ const Meta = props => {
     });
 
     return (
-        <div className="meta">
-            <h1>{ title }</h1>
-            <p className="rights">{ copyright }</p>
-        </div>
+        <MetaContainer>
+            <Title>{ title }</Title>
+            <Name>by { copyright }</Name>
+        </MetaContainer>
     )
 }
 export default Meta;
