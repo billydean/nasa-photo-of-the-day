@@ -6,17 +6,23 @@ const MetaContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 2% 0 2% 0;
-    padding: 1% 0 2% 0;
+    margin: 2% 0 1% 0;
+    padding: 1% 0 1% 0;
     background-color: lightseagreen; 
     `;
 const Title = styled.h1`
     margin: 1% 0;
+    align-self: center;
+    max-width: 75%;
     color: darkslategray;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    font-size: 5rem;
     `;
 const Name = styled.p`
-    margin: 0 0 1% 0;
+    margin: 0 0 0 0;
     color: darkslategray;
+    font-size: 2rem;
     `;
 
 const Meta = props => {
@@ -35,7 +41,7 @@ const Meta = props => {
     return (
         <MetaContainer>
             <Title>{ title }</Title>
-            <Name>by { copyright }</Name>
+            <Name>by { copyright.toUpperCase() }</Name>
         </MetaContainer>
     )
 }

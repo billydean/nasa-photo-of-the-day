@@ -11,16 +11,22 @@ const Buttons = styled.div`
     display: flex;
     justify-content: center;
     gap: 10%;
-    margin-bottom: 2vw;
+    margin-bottom: 2%;
+    margin-top: 1%;
     `;
 const Button = styled.button`
-    height: 3vw;
-    width: 12vw;
-    border-radius: 10px;
-    font-size: 1.25em;
-        &:first-child {
-            width: 8vw;
-        }
+    height: auto;
+    width: auto;
+    padding: .75% 1.5%;
+    border-radius: 18px;
+    font-size: 1.5em;
+    font-family: 'Gentium Book Basic', serif;
+    color: darkslategray;
+    background-color: rgba(170,240,209,0.8);
+       &:hover {
+            color: rgba(170,240,209,0.8);
+            background-color: darkslategray;
+       }
 `;
 
 const Content = () => {
@@ -39,15 +45,15 @@ const resetButton = () => {
 return (
     <div>
         <Header />
-        <div className="top-content">
             <Meta date={ date }/>
+
             <APOD date={ date }/>
-        </div>
-        <Description date={ date }/>
-        <Buttons>
+            <Buttons>
             <Button onClick={resetButton}>Today</Button>
             <Button onClick={randomButton}>Random Day</Button>
         </Buttons>
+        <Description date={ date }/>
+
     </div>
 )
 }
