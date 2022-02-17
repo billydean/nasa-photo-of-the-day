@@ -17,7 +17,7 @@ const StyleHead = styled.header`
     margin: 2% 0 0 0;
     `;
 const HeadText = styled.h2`
-    margin: 0;
+    margin: 0 0 0 5%;
     font-weight: bold;
     font-size: 3.5rem;
     `;

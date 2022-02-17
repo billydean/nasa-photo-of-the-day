@@ -2,6 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import styled from 'styled-components';
 
+const StyleImg = styled.img`
+    object-fit: cover;
+    width: 100%;
+    `;
+const ImgWrap = styled.div`
+    margin: 2% 25% 0 25%;
+    width: 50%;
+`;
 const APOD = props => {
     const { date } = props;
     const [imgURL, setImgURL] = useState("");
@@ -15,14 +23,14 @@ const APOD = props => {
         });
 
     return (
-        <div className="apod">
+        <ImgWrap>
             {
                 imgURL &&
                 <>
-                    <img src={imgURL} alt="NASA's APOD"/>
+                    <StyleImg src={imgURL} alt="NASA's APOD"/>
                 </>
             }
-        </div>
+        </ImgWrap>
     )
 }
 

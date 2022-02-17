@@ -5,8 +5,6 @@ import Meta from "./Meta";
 import Header from "./Header";
 import styled from 'styled-components';
 
-
-const TopContent = styled.div``;
 const Buttons = styled.div`
     display: flex;
     justify-content: center;

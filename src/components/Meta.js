@@ -41,7 +41,7 @@ const Meta = props => {
     return (
         <MetaContainer>
             <Title>{ title }</Title>
-            <Name>by { copyright.toUpperCase() }</Name>
+            <Name>by { copyright }</Name>
         </MetaContainer>
     )
 }
