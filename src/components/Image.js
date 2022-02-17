@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
-const APOD = () => {
+const APOD = props => {
+    const { date } = props;
     const [imgURL, setImgURL] = useState("");
+    const url = `https://api.nasa.gov/planetary/apod?api_key=GLr8dnFFgRiwEuMMzJFBd53vxrSHcluIg02eP8qZ&date=${date}&thumbs=true`;
     useEffect(() => {
-        axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
+        axios.get(url)
             .then(res => {
-                setImgURL(res.data.url);
+                res.data.thumbnail_url ? setImgURL(res.data.thumbnail_url) : setImgURL(res.data.url);
             })
             .catch(err => console.error(err))
-    },[]);
+        });
 
     return (
         <div className="apod">
             {
                 imgURL &&
                 <>
-                    <img src={imgURL} />
+                    <img src={imgURL} alt="NASA's APOD"/>
                 </>
             }
         </div>

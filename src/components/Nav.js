@@ -2,3 +2,9 @@
 // import axios from "axios";
 
 // export default Nav;
+
+const Nav = () => {
+    return
+    
+}
+export default Nav;

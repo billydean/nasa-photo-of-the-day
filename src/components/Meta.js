@@ -3,17 +3,18 @@ import axios from "axios";
 
 
 
-const Meta = () => {
+const Meta = props => {
+    const { date } = props;
     const [copyright, setCopyright] = useState("");
     const [title, setTitle] = useState("");
     useEffect(() => {
-        axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
+        axios.get(`https://api.nasa.gov/planetary/apod?api_key=GLr8dnFFgRiwEuMMzJFBd53vxrSHcluIg02eP8qZ&date=${date}`)
             .then(res => {
                 setTitle(res.data.title);
                 setCopyright(res.data.copyright);
             })
             .catch(err => console.error(err))
-    },[]);
+    });
 
     return (
         <div className="meta">
