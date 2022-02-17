@@ -1,10 +1,12 @@
-// import React, { useState, useEffect } from 'react';
-// import axios from "axios";
+import React from "react";
 
-// export default Nav;
-
-const Nav = () => {
-    return
-    
+function Nav () {
+    return (
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    )
 }
 export default Nav;

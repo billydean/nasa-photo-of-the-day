@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import APOD from "./Image";
 import Description from "./Description";
 import Meta from "./Meta";
+import Header from "./Header";
 
 const Content = () => {
     const [date, setDate] = useState("");
@@ -18,6 +19,7 @@ const resetButton = () => {
 }
 return (
     <div>
+        <Header />
         <div className="top-content">
             <APOD date={ date }/>
             <Meta date={ date }/>
